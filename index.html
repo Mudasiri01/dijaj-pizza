@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DAJAJ Pizza | Bhakkar, Pakistan</title>
+<meta name="description" content="DAJAJ Pizza on Darya Khan Road, Bhakkar. Pizza, burgers, sandwiches and fries. Order on WhatsApp or call 0345 7109674. Cash only.">
+<link rel="icon" href="assets/icons/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><img id="loadPizza" src="assets/icons/logo.svg" width="110" alt=""><p>Baking…</p></div>
+
+<nav id="nav" class="navbar navbar-expand-lg fixed-top">
+ <div class="container">
+  <a class="navbar-brand brand" href="#home"><img src="assets/icons/logo.svg" width="38" height="38" alt="">DAJAJ</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="menu-links" id="links">
+   <a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#deals">Special Offers</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+   <button class="btn-d sm" data-cart-open>Order Now <span id="cartCount" class="cnt">0</span></button>
+  </div>
+ </div>
+</nav>
+
+<header id="home" class="hero">
+ <div class="container position-relative">
+  <div class="row align-items-center g-4">
+   <div class="col-lg-6 order-2 order-lg-1">
+    <span class="badge-pill">Made with love, served fresh</span>
+    <h1 class="split">FRESHLY BAKED.<br>FULL OF FLAVOUR.</h1>
+    <p class="lead-t">Enjoy delicious pizzas, burgers, sandwiches and fries at DAJAJ.</p>
+    <div class="d-flex gap-3 flex-wrap"><button class="btn-d" data-cart-open>ORDER NOW</button><a class="btn-o" href="#menu">EXPLORE MENU</a></div>
+    <p class="cash"><i class="fa-solid fa-money-bill-wave"></i> PAYMENT METHOD: CASH ONLY</p>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section id="about" class="sec cream">
+ <div class="container"><div class="row align-items-center g-5">
+  <div class="col-lg-6 collage"><div class="c1" data-art="pizza:0"></div><div class="c2" data-art="pizza:1"></div><div class="c3" data-art="burger:0"></div></div>
+  <div class="col-lg-6 rv">
+   <h2>MORE THAN JUST PIZZA. IT'S AN EXPERIENCE.</h2>
+   <p>DAJAJ Pizza is a local restaurant on Darya Khan Road in Bhakkar, serving pizza and fast food for family outings, friends and quick cravings.</p>
+   <p>We focus on freshly prepared orders, a friendly welcome and food you will want to come back for. Visit us opposite UBL Bank, or order by WhatsApp.</p>
+   <div class="stats"><div><b data-n="4.3" data-d="1">0</b><small>Facebook rating (12 votes)</small></div><div><b data-n="6">0</b><small>Menu categories</small></div><div><b data-n="1000" data-pre="PKR 1–">0</b><small>Price range per person</small></div></div>
+   <a class="btn-d" href="#why">Learn More</a>
+  </div>
+ </div></div>
+</section>
+
+<section id="menu" class="sec dark">
+ <div class="container">
+  <h2 class="text-center rv">OUR FOOD MENU</h2>
+  <p class="note rv"><i class="fa-solid fa-circle-info"></i> Sample items and sample prices. Replace them with DAJAJ's real menu in the <code>MENU</code> array in script.js.</p>
+  <div class="filters" id="filters"></div>
+  <div class="row g-4" id="menuGrid"></div>
+ </div>
+</section>
+
+<section id="pizzas" class="sec red">
+ <div class="container"><h2 class="text-center rv">SPECIAL PIZZA SHOWCASE</h2>
+  <p class="note rv">Sample pizzas and sample prices. Choose a size, then order.</p>
+  <div class="row g-4" id="pizzaGrid"></div></div>
+</section>
+
+<section id="deals" class="sec dark">
+ <div class="container"><h2 class="text-center rv">BIG CRAVINGS. BETTER COMBOS.</h2>
+  <p class="note rv">Sample combos. No discounts or live offers are implied; confirm current deals with the restaurant.</p>
+  <div class="row g-4" id="dealGrid"></div></div>
+</section>
+
+<section id="why" class="sec cream">
+ <div class="container"><h2 class="text-center rv">WHY CHOOSE DAJAJ</h2><div class="row g-4 mt-2" id="whyGrid"></div></div>
+</section>
+
+<section id="gallery" class="sec dark">
+ <div class="container"><h2 class="text-center rv">FOOD GALLERY</h2>
+  <p class="note rv">Photos load from <code>assets/images</code>.</p>
+  <div class="filters" id="gFilters"></div><div class="masonry" id="gGrid"></div></div>
+</section>
+
+<section id="how" class="sec cream">
+ <div class="container"><h2 class="text-center rv">HOW TO ORDER</h2><div class="steps" id="steps"></div></div>
+</section>
+
+<section id="reviews" class="sec red">
+ <div class="container text-center"><h2 class="rv">CUSTOMER REVIEWS</h2>
+  <p class="note">Facebook rating: 4.3/5 from 12 votes (source: DAJAJ Facebook page, not independently verified). The reviews below are placeholders until real ones are supplied.</p>
+  <div class="swiper" id="revSwiper"><div class="swiper-wrapper" id="revWrap"></div><div class="swiper-pagination"></div></div></div>
+</section>
+
+<section id="location" class="sec dark">
+ <div class="container"><div class="row g-4 align-items-stretch">
+  <div class="col-lg-5 rv"><div class="card-d h-100">
+   <h2>FIND US</h2><h4>DAJAJ Pizza</h4>
+   <p><i class="fa-solid fa-location-dot"></i> Darya Khan Road, Opposite UBL Bank, Chah Chimni, Bhakkar, 30000</p>
+   <p><i class="fa-solid fa-phone"></i> <a href="tel:03457109674">0345 7109674</a></p>
+   <p><i class="fa-solid fa-money-bill-wave"></i> Cash only</p>
+   <a class="btn-d" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=DAJAJ+Pizza+Darya+Khan+Road+Bhakkar">Get Directions</a>
+  </div></div>
+  <div class="col-lg-7 rv"><iframe class="map" loading="lazy" title="DAJAJ location map" src="https://www.google.com/maps?q=DAJAJ+Pizza+Darya+Khan+Road+Bhakkar&output=embed"></iframe></div>
+ </div></div>
+</section>
+
+<section id="contact" class="sec cream">
+ <div class="container"><h2 class="text-center rv">CONTACT &amp; ORDER</h2><div class="row g-4 mt-1">
+  <div class="col-lg-5 rv">
+   <p><b>Phone:</b> 0345 7109674</p><p><b>Location:</b> Bhakkar, Pakistan</p><p><b>Payment:</b> CASH ONLY</p>
+   <p><b>Hours:</b> Open until 11:30 PM. <small>Daily opening hours to be confirmed with the restaurant.</small></p>
+   <div class="d-flex gap-2 flex-wrap"><a class="btn-d" href="tel:03457109674"><i class="fa-solid fa-phone"></i> Call Now</a><a class="btn-g" target="_blank" rel="noopener" href="https://wa.me/923457109674?text=Hello%20DAJAJ%2C%20I%20would%20like%20to%20order."><i class="fa-brands fa-whatsapp"></i> WhatsApp Order</a></div>
+  </div>
+  <div class="col-lg-7 rv"><form id="cform" class="card-d lt">
+   <input class="form-control" id="cn" placeholder="Your name" required><input class="form-control" id="cm" placeholder="Phone number" required>
+   <textarea class="form-control" id="cx" rows="3" placeholder="Your message" required></textarea>
+   <button class="btn-d">Send via WhatsApp</button></form></div>
+ </div></div>
+</section>
+
+<section id="faq" class="sec dark">
+ <div class="container narrow"><h2 class="text-center rv">FAQ</h2><div id="faqList"></div></div>
+</section>
+
+<footer>
+ <div class="container"><div class="row g-4">
+  <div class="col-lg-4"><a class="brand" href="#home"><img src="assets/icons/logo.svg" width="38" alt="">DAJAJ</a><p class="mt-3">Pizza and fast food in Bhakkar. Fresh orders, friendly service.</p><a class="soc" target="_blank" rel="noopener" href="https://www.facebook.com/dajajbk/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></div>
+  <div class="col-6 col-lg-2"><h5>Quick Links</h5><a href="#about">About</a><a href="#menu">Menu</a><a href="#deals">Offers</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a></div>
+  <div class="col-6 col-lg-2"><h5>Categories</h5><a href="#menu">Pizza</a><a href="#menu">Burgers</a><a href="#menu">Sandwiches</a><a href="#menu">Fries</a></div>
+  <div class="col-lg-4"><h5>Contact</h5><p>Darya Khan Road, Opposite UBL Bank, Chah Chimni, Bhakkar, 30000</p><p><a href="tel:03457109674">0345 7109674</a></p><p class="cash">PAYMENT METHOD: CASH ONLY</p></div>
+ </div><hr><small>© <span id="yr"></span> DAJAJ Pizza. All rights reserved.</small></div>
+</footer>
+
+<a id="wa" target="_blank" rel="noopener" href="https://wa.me/923457109674" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<div id="shade"></div>
+<aside id="cart"><div class="ch"><h3>Your Order</h3><button id="cClose" aria-label="Close">&times;</button></div>
+ <div id="cItems"></div>
+ <div class="cf"><div class="tot"><span>Total</span><b id="cTot">PKR 0</b></div>
+  <p class="cash">PAYMENT METHOD: CASH ONLY</p><small>Your order is not confirmed until DAJAJ replies. Prices are subject to confirmation.</small>
+  <button class="btn-g w-100 mt-2" id="checkout"><i class="fa-brands fa-whatsapp"></i> Checkout on WhatsApp</button>
+  <button class="btn-o w-100 mt-2" id="clear">Clear Cart</button></div></aside>
+<div id="lb"><button aria-label="Close">&times;</button><div id="lbIn"></div></div>
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
